@@ -43,7 +43,13 @@ def _extract_tickets(market_data, tickets):
 
 
 def _calculate_latest_price(latest_price, quantity_dict):
-    return {
+    data = {
         ticket: latest_price[ticket] * quantity_dict[ticket]
         for ticket in quantity_dict.keys()
+    }
+    total_price = sum(data.values())
+    
+    return {
+        "data": data,
+        "total": total_price
     }

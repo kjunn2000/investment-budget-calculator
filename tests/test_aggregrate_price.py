@@ -42,3 +42,4 @@ class TestAggregratePrice(TestBase):
         response = _calculate_latest_price(mock_latest_price, mock_quantity_dict)
 
         assert response == mock_total_price
+        
